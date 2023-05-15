@@ -1,2 +1,2 @@
 # thinkbridge_assignments
-This repository contains files to practice assignments at thinkbridge.
+This repository contains files of practice assignments at thinkbridge.
