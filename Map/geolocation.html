@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Geo-location</title>
+    </head>
+    <body>
+        <p>Click the button to get coordinates.</p>
+        <button onclick="getLocation()", style="height:80px;width:220px">Click</button>
+        <p id="demo"></p>
+        <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else {
+                    x.innerHTML = "Geolocation unavailable";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }
+        </script>
+        
+    </body>
+</html>

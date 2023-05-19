@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo-Location & Map</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <h3>Geo-location with map display</h3>
+
+        <button onclick="getLocation()", style="height:80px;width:220px">Click to get your coordinates</button>
+        <p id="demo"></p>
+        <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else {
+                    x.innerHTML = "Geolocation unavailable";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }
+        </script>
+
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" placeholder="Enter latitude" />
+    <br>
+
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" placeholder="Enter longitude" />
+    <br>
+
+    <button onclick="showLocation()", style="height:80px; width:220px"">Show Location</button>
+
+    <div id="map"></div>
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        function showLocation() {
+            var latitude = parseFloat(document.getElementById("latitude").value);
+            var longitude = parseFloat(document.getElementById("longitude").value);
+
+            if (isNaN(latitude) || isNaN(longitude)) {
+                alert("Please enter valid latitude and longitude values.");
+                return;
+            }
+
+            var map = L.map('map').setView([latitude, longitude], 12);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([latitude, longitude]).addTo(map);
+        }
+    </script>
+</body>
+</html>
