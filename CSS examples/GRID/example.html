@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Header, Sidebar, and Footer with Grid Example</title>
+    <style>
+        /* CSS styles for the grid container */
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 20px;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* CSS styles for the header */
+        .header {
+            grid-area: header;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* CSS styles for the sidebar */
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sidebar a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* CSS styles for the content area */
+        .content {
+            grid-area: content;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        /* CSS styles for the footer */
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <h1>My Website</h1>
+        </div>
+        <div class="sidebar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="content">
+            <!-- Your main content here -->
+            <h2>Welcome to my website!</h2>
+            <p>This is the main content area.</p>
+        </div>
+        <div class="footer">
+            <p>This is the footer section.</p>
+        </div>
+    </div>
+</body>
+</html>

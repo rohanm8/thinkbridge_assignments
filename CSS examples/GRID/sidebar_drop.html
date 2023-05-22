@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Sidebar Dropdown</title>
+    <style>
+        /* CSS styles for the sidebar */
+        .sidebar {
+            width: 200px;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sidebar a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* CSS styles for the dropdown menus */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 200px;
+            top: 0;
+            background-color: #f9f9f9;
+            padding: 10px;
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="dropdown">
+            <a href="#">Item1</a>
+            <div class="dropdown-content">
+                <a href="#">Item1_1</a>
+                <a href="#">Item1_2</a>
+                <a href="#">Item1_3</a>
+            </div>
+        </div>
+        <a href="#">Item1</a>
+        <div class="dropdown">
+            <a href="#">Item2</a>
+            <div class="dropdown-content">
+                <a href="#">Item2_1</a>
+                <a href="#">Item2_2</a>
+                <a href="#">Item2_3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Item3</a>
+            <div class="dropdown-content">
+                <a href="#">Item3_1</a>
+                <a href="#">Item3_2</a>
+                <a href="#">Item3_3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Item4</a>
+            <div class="dropdown-content">
+                <a href="#">Item4_1</a>
+                <a href="#">Item4_2</a>
+                <a href="#">Item4_3</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

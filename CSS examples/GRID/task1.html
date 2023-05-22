@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TASK 1</title>
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "sidebar block1 block2"
+                    "footer footer footer";
+                grid-template-columns: 200px 1fr 1fr;
+                grid-template-rows: auto 1fr auto;
+                gap: 20px;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .header {
+                grid-area: header;
+                background-color: #5a5a5a;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .sidebar {
+                grid-area: sidebar;
+                background-color: #cacaca;
+                padding: 20px;
+            }
+
+            .block1 {
+                grid-area: block1;
+                background-color: #ff5a47;
+                padding: 20px;
+                color: white;
+            }
+
+            .block2 {
+                grid-area: block2;
+                background-color: #3ba1ef;
+                padding: 20px;
+                color: white
+            }
+
+            .block3 {
+                grid-area: block3;
+                background-color: #ff6666;
+                padding: 20px;
+            }
+
+            .footer {
+                grid-area: footer;
+                background-color: #7f7f7f;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="header">
+                <h1>HEADER</h1>
+            </div>
+            <div class="sidebar">
+                <h3>SIDEBAR</h3>
+            </div>
+            <div class="block1">
+                <h3>Box 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="block2">
+                <h3>Box 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="footer">
+                <h2>FOOTER</h2>
+            </div>
+        </div>
+    </body>
+</html>
