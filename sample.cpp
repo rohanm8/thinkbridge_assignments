@@ -1,6 +1,8 @@
 #include <iostream>
+/*
 #include <bits/stdc++.h>
 //Error with line 2
+*/
 using namespace std;
 
 // Print array
