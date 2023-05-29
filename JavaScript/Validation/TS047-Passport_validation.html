@@ -208,9 +208,71 @@
 
             <b>4. Present Residential Address (Where applicant presently resides)</b> <br><br>
 
-            <center><button type="button"">SUBMIT</button></center>
+            <center><button type="button" onclick="file_num_validate()">SUBMIT</button></center>
 
         </div>
+
+        <!--
+        <script>
+            function file_num_validate() {
+                let x = document.getElementById("file_number").value;
+                let y = x.length;
+                if (y >= 12) {
+                    <ul>
+                        <li>File number should be no more than 12 characters</li>
+                    </ul>
+                    document.getElementById("file_number").focus();
+                }
+
+                if (y <= 12) {
+                    <ul>
+                        <li>File number should be no less than 12 characters</li>
+                    </ul>
+                    document.getElementById("file_number").focus();
+                }
+
+                if (y.charAt(0) != /[^a-zA-Z0-9]/) {
+                    <ul>
+                        <li>File number cannot contain special characters.</li>
+                    </ul>
+                    document.getElementById("file_number").focus();
+                }
+
+                if (x != /[^a-zA-Z0-9]/) {
+                    <ul>
+                        <li>File number must be alphanumeric.</li>
+                    </ul>
+                    document.getElementById("file_number").focus();
+                }
+
+                }
+            }
+        </script>
+        -->
+
+        <script>
+            function file_num_validate() {
+                var fileNumber = document.getElementById('file_number').value;
+                if (fileNumber === "") {
+                    alert("Please enter a file number.");
+                    getElementById('file_number').focus();
+                    return false;
+                }
+                if(fileNumber.length < 12) {
+                    alert("File number should not be less than 12 characters.");
+                    getElementById('file_number').focus();
+                    return false;
+                }
+
+                if(fileNumber.length > 12) {
+                    alert("File number should not be more than 12 characters.");
+                    getElementById('file_number').focus();
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
     </body>
 </html>
 
