@@ -37,7 +37,9 @@
         <form name="file_num" onsubmit="return file_num_validate()"> 
             <center>
             <label name="file-number">FILE NUMBER</label>
-            <input type="text" name="file_number" id="file_number" style="width: 200px">
+            <input type="text" name="file_number" id="file_number" style="width: 200px"> <br>
+            <label name="dateofissue">Date of issue</label>
+            <input type="date" name="dateofissue" id="dateofissue" style="width: 200px">
             </center>
         </form>
 
@@ -253,6 +255,7 @@
         <script>
             function file_num_validate() {
                 var fileNumber = document.getElementById('file_number').value;
+                var doi = document.getElementById('dateofissue').value;
                 
                 // Check if file number is empty
                 if (fileNumber === "") {
@@ -284,20 +287,29 @@
                 }
 
                 // Check if file number is alphanumeric
-                //if(fileNumber!=="[^a-zA-Z0-9]") {
-                  //  alert("File number should be alphanumeric.");
-                  //  getElementById('file_number').focus();
-                  //  return false;
-                //}
-                
-                // Check if the character at first position is an alphabet
-                if(filenumber.charAt(0)!=="/[^a-zA-Z]/") {
-                    alert("File number should start with a alphabet.");
+                if(fileNumber!==/^[a-zA-Z0-9]/) {
+                    alert("File number should be alphanumeric.");
                     getElementById('file_number').focus();
                     return false;
                 }
-
                 
+                // Check if the character at first position is an alphabet
+//                if(fileNumber.charAt(0)!== /^[A-Za-z]+$/) {
+//                    alert("File number should start with an alphabet.");
+//                    //getElementById('file_number').focus();
+//                    fileNumber.focus();
+//                    return false;
+//                }
+
+                // Check if last two digits of file number correspond with last two digits of year (YYYY) in date of issue
+                if(fileNumber[10]!==doi[10]) {
+                    alert("Last two digits of filenumber do not match with year of issue.");
+                    doi.focus();
+                }
+                if(fileNumber[11] !== doi[10]) {
+                    alert("Last two digits of filenumber do not match with year of issue.");
+                    doi.focus();
+                }
                 return true;
             }
         </script>
