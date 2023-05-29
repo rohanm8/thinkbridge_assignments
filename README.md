@@ -7,4 +7,5 @@ This repository contains the practice, lab and session assignment files created 
 &nbsp; Module 3: Git and Github <br>
 &nbsp; Module 4: HTML <br>
 &nbsp; Module 5: CSS <br>
-&nbsp; Module 6: JavaScript <br>
+&nbsp; Module 6: Bootstrap <br>
+&nbsp; Module 7: JavaScript <br>
