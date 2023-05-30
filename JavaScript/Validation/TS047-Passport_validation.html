@@ -51,19 +51,19 @@
             </b></div><br>
             <b>1. Service required</b> <br><br>
                 <b>1.1 Applying for</b> &nbsp
-                    <input type="radio" name="applyingfor" value="fresh_passport"> Fresh Passport &nbsp
-                    <input type="radio" name="applyingfor" value="reissue"> Re-issue of Passport <br><br>
-                <div class="grid-container">
+                    <input type="radio" name="applyingfor" id="fresh_passport" value="fresh_passport" onclick="module1_validate()"> Fresh Passport &nbsp
+                    <input type="radio" name="applyingfor" id="reissue" value="reissue"> Re-issue of Passport <br><br>
+                <div class="grid-container" id="section1.2" >
                     <b>1.2 If re-issue, specify reason(s)</b> <br>
                         <div class="grid-item"> <input type="radio" name="section1.2" value="expires_within3"> Validity Expired within 3 years/ Due to Expire </div>
                         <div class="grid-item"> <input type="radio" name="section1.2" value="expired_more3"> Validity Expired more than 3 years ago </div>
-                        <div class="grid-item"> <input type="radio" name="section1.2" value="change_personal_particulars"> Change in Existing Personal Particulars </div>
+                        <div class="grid-item"> <input type="radio" id="section1.2.change" name="section1.2" value="change_personal_particulars"> Change in Existing Personal Particulars </div>
                         <div class="grid-item"> <input type="radio" name="section1.2" value="exhaust"> Exhaust of pages </div>                                        
                         <div class="grid-item"> <input type="radio" name="section1.2" value="lost"> Lost passport </div>
                         <div class="grid-item"> <input type="radio" name="section1.2" value="damaged"> Damaged passport </div>
                     <br>
                 </div>
-                <div class="grid-container">
+                <div class="grid-container" id="section1.3">
                     <b>1.3 If change in existing personal particulars, specify reason(s)</b> <br>
                         <div class="grid-item"> <input type="radio" name="section1.3" value="appearance"> Appearance </div>
                         <div class="grid-item"> <input type="radio" name="section1.3" value="surname"> Surname </div>
@@ -88,9 +88,9 @@
 
             <b>2. Applicant Details</b> <br><br>
             <b>2.1 Applicant's given name</b> &nbsp
-                <input name="section2.1" style="width:700px" placeholder="Enter applicant's givenname (First name and Middle name)"> <br>
+                <input type="text" id="applicant_name" name="section2.1" style="width:700px" placeholder="Enter applicant's givenname (First name and Middle name)"> <br>
             <b>&nbsp&nbsp&nbsp&nbsp&nbsp Surname</b>
-                <input name="section2.1" style="width: 805px" placeholder="Enter applicant's surname (Last name)"> <br><br>
+                <input type="text" id="applicant_surname" name="section2.1" style="width: 805px" placeholder="Enter applicant's surname (Last name)"> <br><br>
             
             <b>2.2 Are you known by any other names (aliases)? </b> &nbsp;
                 <input type="radio" name="section2.2" value="other_name_yes"> Yes
@@ -106,13 +106,13 @@
                 <input type="date" name="section2.4" value="2.4DOB"> <br><br>
             
             <b>2.5 Place of Birth (Village or Town or City)</b>
-                <input name="section2.5" style="width:600px" placeholder="Enter place of birth"> <br><br>
+                <input id="pob" name="section2.5" style="width:600px" placeholder="Enter place of birth"> <br><br>
             &nbsp&nbsp&nbsp&nbsp&nbsp District (If born in India) &nbsp;
-                <input name="section2.5" style="width: 700px" placeholder="Enter district"> <br>
+                <input id="pob_dis" name="section2.5" style="width: 700px" placeholder="Enter district"> <br>
             &nbsp&nbsp&nbsp&nbsp&nbsp  State/UT (If born in India) &nbsp;
-                <input name="section2.5" style="width: 690px" placeholder="Enter State or Union Territory"> <br>
+                <input id="pob_state" name="section2.5" style="width: 690px" placeholder="Enter State or Union Territory"> <br>
             &nbsp&nbsp&nbsp&nbsp&nbsp Region/Country (If born abroad) &nbsp;
-                <input name="section2.5" style="width: 650px" placeholder="Enter country or region"> <br><br>
+                <input id="pob_country" name="section2.5" style="width: 650px" placeholder="Enter country or region"> <br><br>
             
             <b>2.6 Gender</b> &nbsp;
                 <input type="radio" name="section2.6" value="male"> Male
@@ -135,7 +135,7 @@
                 <input name="section2.9" style="width: 600px" placeholder="Enter PAN Number"> <br><br>
 
             <b>2.10 Voter ID (If available)</b> &nbsp;
-                <input name="section2.10" style="width: 570px" placeholder="Enter voter ID"> <br><br>
+                <input id="vot_id" name="section2.10" style="width: 570px" placeholder="Enter voter ID"> <br><br>
 
             
             <div class="grid-container">
@@ -175,10 +175,10 @@
                 <input type="radio" name="section2.15" value="2.15_no"> No <br><br>
 
             <b>2.16 Visible Distinguishing Mark</b> &nbsp;
-                <input name="section2.16" style="width: 500px" placeholder="Enter mark details" value="2.16_mark"> <br><br>
+                <input name="section2.16" style="width: 500px" placeholder="Enter mark details"> <br><br>
 
             <b>2.17 Aadhar Number</b> &nbsp;
-                <input name="section2.17" style="width: 500px" placeholder="Enter aadhar number" value="2.17_aadhar"> <br><br>
+                <input name="section2.17" style="width: 500px" placeholder="Enter aadhar number"> <br><br>
 
             <b>3. Family Details</b> <br><br>
             <b>3.1 Father's given name</b> &nbsp;
@@ -210,7 +210,7 @@
 
             <b>4. Present Residential Address (Where applicant presently resides)</b> <br><br>
 
-            <center><button type="button" onclick="file_num_validate()">SUBMIT</button></center>
+            <center><button type="button" onclick="validate()">SUBMIT</button></center>
 
         </div>
 
@@ -253,6 +253,13 @@
         -->
 
         <script>
+            
+            function validate() {
+                //file_num_validate();
+                module1_validate();
+                module2_validate();
+
+            }
             function file_num_validate() {
                 var fileNumber = document.getElementById('file_number').value;
                 var doi = document.getElementById('dateofissue').value;
@@ -305,12 +312,114 @@
                 if(fileNumber[10]!==doi[10]) {
                     alert("Last two digits of filenumber do not match with year of issue.");
                     doi.focus();
+                    return false;
                 }
                 if(fileNumber[11] !== doi[10]) {
                     alert("Last two digits of filenumber do not match with year of issue.");
                     doi.focus();
+                    return false;
                 }
                 return true;
+            }
+
+            function module1_validate() {
+                //Hide "1.2 Reason for re-issue" when fresh passport radiobutton is selected.
+                if(document.getElementsById('fresh_passport').checked === true) {
+                    document.getElementById('section1.2').style.display = "none";
+                }
+                
+                //Hide "1.3 If changes in existing personal particulars, specify reason(s)" when "change in personal particulars" is not selected in section 1.2
+                if(document.getElementId('section1.2.change').checked !== true) {
+                    document.getElementById('section1.3').style.display ="none";
+                }
+            }
+
+            function module2_validate() {
+
+                //Check if 2.1 Applicant's name has special characters
+                var applicant_name = document.getElementbyId('applicant_name').value;     //Define a variable which points to 2.1 Applicant's name
+                var special_char = /[!@£$&]/;
+                if(special_char.test(applicant_name)) {
+                    alert("Applicant's name cannot contain special characters.");
+                    applicant_name.focus();
+                    return false;
+                }
+
+                //Check if 2.1 Applicant's name is alphanumeric
+                if(applicant_name === /^[a-zA-Z0-9]/) {
+                    alert("Applicant's name cannot be alphanumeric.");
+                    applicant_name.focus();
+                    return false;
+                }
+                
+                //Check if 2.1 Applicant's name is only alphabets
+                if(applicant_name !== /[A-Za-z]/) {
+                    alert("Applicant's name should only contain letters.");
+                    applicant_name.focus();
+                    return false;
+                }
+
+                // 2.1 Applicants surname
+                var applicant_surname = document.getElementById('applicant_surname').value;
+                // Check if 2.1 Applicant's surname has special characters
+                if(special_char.test(applicant_surname)) {
+                    alert("Applicant's surname cannot contain special characters.");
+                    applicant_surname.focus();
+                    return false;
+                }
+
+                //Check if 2.1 Applicant's surname is alphanumeric
+                if(applicant_surname === /^[a-zA-Z0-9]/) {
+                    alert("Applicant's surname cannot be alphanumeric.");
+                    applicant_surname.focus();
+                    return false;
+                }
+                
+                //Check if 2.1 Applicant's surname is only alphabets
+                if(applicant_surname !== /[A-Za-z]/) {
+                    alert("Applicant's surname should only contain letters.");
+                    applicant_name.focus();
+                    return false;
+                }
+
+                //2.5 Place of birth
+                var pob = document.getElementById('pob').value;
+                var pob_dis = document.getElementById('pob_dis').value;
+                var pob_state = document.getElementById('pob_state').value;
+                var pob_country = document.getElementById('pob_country').value;
+                //Check if district, state and country have same values.
+                if(pob_dis === pob_state === pob_country) {
+                    alert("District, State and Country cannot have same values.");
+                    pob.focus();
+                    return false;
+                }
+
+                //2.10 Voter ID
+                var vot_id = document.getElementById('vot_id').value;
+
+                //Check if 2.10 Voter ID has special characters
+                if(special_char.test(vot_id)) {
+                    alert("Voter ID cannot contain special characters.");
+                    vot_id.focus();
+                    return false;
+                }
+
+                //Check if 2.10 Voter ID has lowercase alphabets
+                if(vot_id === /^[a-z0-9]/) {
+                    alert("Voter ID cannot have lowercase characters.");
+                    vot_id.focus();
+                    return false;
+                }
+                
+                //Check if 2.10 Voter ID is only uppercase alphabets and numbers
+                if(applicant_surname !== /[A-Z0-9]/) {
+                    alert("Voter ID must have uppercase alphabets and numbers.");
+                    vot_id.focus();
+                    return false;
+                }
+
+                //
+
             }
         </script>
 

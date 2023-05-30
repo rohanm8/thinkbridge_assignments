@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Employee details</title>
+        <style>
+            .header {
+                padding: 10px
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header" id="head">
+            <h1><center>Employee details</center></h1>
+        </div>
+        <b>Details: </b> <br>
+        <p id="data"></p>
+        <script>
+            function emp(id, name, address) {
+                this.id = id;
+                this.name = name;
+                this.address = address;
+            }
+
+            function emp_sal(id, name, salary) {
+                this.id = id;
+                this.name = name;
+                this.salary = salary;
+            }
+
+            emp.prototype.detail = function() {
+                return "Detail: " + this.id + ", " + this.name + ", " + this.address;
+                return "Salary: " + this.id + ", " + this.name + ", " + this.salary;
+            }
+
+            const emp1
+            document.getElementById('data')/innerHTML = 
+
+
+        </script>
+    </body>
+</html>
