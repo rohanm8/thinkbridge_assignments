@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <!--    Bootstrap 4.0.0     -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+
+    <!--    Bootstrao 5.3.0     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div> 
+    </div>
+      
+    <h2><BR><center>GOVERNMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS<br>PASSPORT APPLICATION FORM</center></h2><br>
+        <center><label id="file_num">File number: </label>
+        <input type="text" style="width: 300px; border-radius: 10px; padding: 5px" id="file_number"></center>
+    <div class="box"><b>Please read the passport intruction bookley carefully before filling the form. Fill this form in CAPITAL LETTERS using 
+        blue&#47black ink ball point pen only. Furnishing of incorrect information/suppression of information would lead to
+        rejection of the application and would attract penal provisions as prescribed under the Passports Act, 1967. Please 
+        produce your original documents at the time of submission of the form.
+    </b></div>
+
+    <div class="registration-form">
+        <form style="color: black;">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="module1">
+
+                <!--    Module 1: Service required     -->
+                <label id="module1"><h4>1. Service required</h4></label><br>
+                    <label id="username_label">&nbsp;1.1 Applying for</label><br> &nbsp;
+                        <input type="radio" name="applying_for"> Fresh passport
+                        <input type="radio" name="applying_for"> Re-issue of passport
+
+                    <div class="grid-container" id="1.2reissue">
+                        <label><br><b>1.2 If reissue, specify reason(s)</b></label><br>
+                            <div class="col-md-10"><input type="radio" name="section1.2" value="expires within">Validity expires within 3 years/Due to expire</div>
+                            <div class="col-md-10"> <input type="radio" name="section1.2" value="expired_more3"> Validity Expired more than 3 years ago </div>
+                            <div class="col-md-10"> <input type="radio" name="section1.2" value="change_personal_particulars"> Change in Existing Personal Particulars </div>
+                            <div class="col-md-10"> <input type="radio" name="section1.2" value="exhaust"> Exhaust of pages </div>                                        
+                            <div class="col-md-10"> <input type="radio" name="section1.2" value="lost"> Lost passport </div>
+                            <div class="col-md-10"> <input type="radio" name="section1.2" value="damaged"> Damaged passport </div>
+                    </div>
+
+                    <div class="grid-container" id="1.3change">
+                        <label><br><b>1.3 If change in existing personal particulars, specify reason(s)</b></label><br>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="appearance"> Appearance </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="surname"> Surname </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="address"> Address </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="signature"> Signature </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="DOB"> Date of Birth </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="ECR"> Delete ECR </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="given_name"> Given Name </div>
+                            <div class="grid-item"> <input type="radio" name="section1.3" value="spouse_name"> Spouse Name </div>
+                    </div><br>
+
+                    <b>1.4 Type of Application &nbsp</b> 
+                        <input type="radio" name="section1.4" value="normal"> Normal &nbsp;
+                        <input type="radio" name="section1.4" value="tatkaal"> Tatkaal <br><br>
+
+                    <b>1.5 Type of Passport Booklet</b>  &nbsp
+                        <input type="radio" name="section1.5" value="36pages"> 36 Pages &nbsp;
+                        <input type="radio" name="section1.5" value="60pages"> 60 pages <br><br>
+
+                    <b>1.6 Validity Required</b> &nbsp
+                        <input type="radio" name="section1.6" value="10years"> 10 years &nbsp;
+                        <input type="radio" name="section1.6" value="upto18"> Up to age 18 <br><br><br>  
+
+                <!--    Module 2: Applicant details     -->
+                <label id="module2"><h4>2. Applicant details</h4></label><br>
+                    <b>2.1 Applicant's given name</b> &nbsp
+                        <input type="text" class="form-control item" id="app_given_name" placeholder="Enter applicant's givenname (First name and Middle name)">
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surname</b>
+                        <input type="text" class="form-control item" id="app_surname" placeholder="Enter applicant's surname (Last name)">
+                    
+                    <b>2.2 Are you known by any other names (aliases)? </b> &nbsp;
+                        <input type="radio" name="section2.2" value="other_name_yes"> Yes
+                        <input type="radio" name="section2.2" value="other_name_no"> No <br>
+                    If yes, provide details in Column 1 of Supplementary Form<br><br>
+                    
+                    <b>2.3 Have you ever changed your name?</b> &nbsp;
+                        <input type="radio" name="section2.3" value="change_name_yes"> Yes
+                        <input type="radio" name="section2.3" value="change_name_no"> No <br>
+                    If yes, provide details in Column 2 of Supplementary Form<br><br>
+
+                    <b>2.4 Date of Birth (DD-MM-YY)</b>
+                        <input type="date" name="section2.4" value="2.4DOB"> <br><br>
+                    <b>2.5 Place of Birth (Village or Town or City)</b>
+                        <input type="text" class="form-control item" id="pob_town" placeholder="Enter place of birth">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; District (If born in India) &nbsp;
+                        <input type="text" class="form-control item" id="pob_district" placeholder="Enter district">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State/UT (If born in India) &nbsp;
+                        <input type="text" class="form-control item" id="pob_state" placeholder="Enter State or Union Territory">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region/Country (If born abroad) &nbsp;
+                        <input type="text" class="form-control item" id="pob_country" placeholder="Enter country or region">
+
+                    <b>2.6 Gender</b> &nbsp;
+                        <input type="radio" name="section2.6" value="male"> Male &nbsp;
+                        <input type="radio" name="section2.6" value="female"> Female &nbsp;
+                        <input type="radio" name="section2.6" value="transgender"> Transgender <br><br>
+                    
+                    <b>2.7 Maritial status</b> &nbsp;
+                        <input type="radio" name="section2.7" value="single"> Single &nbsp;
+                        <input type="radio" name="section2.7" value="married"> Married &nbsp;
+                        <input type="radio" name="section2.7" value="divorced"> Divorced &nbsp;
+                        <input type="radio" name="section2.7" value="widow/widower"> Widow/Widower &nbsp;
+                        <input type="radio" name="section2.7" value="separated"> Separated <br><br>
+                    
+                    <b>2.8 Citizenship of India by</b> &nbsp;
+                        <input type="radio" name="section2.8" value="citizen_birth"> Birth &nbsp;
+                        <input type="radio" name="section2.8" value="citizen_descent"> Descent &nbsp;
+                        <input type="radio" name="section2.8" value="citizen_register"> Registration/Naturalization <br><br>
+                    
+                    <b>2.9 PAN (If available)</b> &nbsp;
+                        <input type="text" class="form-control item" id="pan_number" placeholder="Enter PAN Number">
+        
+                    <b>2.10 Voter ID (If available)</b> &nbsp;
+                        <input type="text" class="form-control item" id="voter_id" placeholder="Enter voter ID">
+
+                    <div class="grid-container">
+                        <b>2.11 Employment Type</b>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_psu"> PSU </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_govt"> Government </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_statbod"> Statutory body </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_rgs"> Retired government servant </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_se"> Self Employed </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_private"> Private </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_homemaker"> Homemaker </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_ne"> Not Employed </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_rps"> Retired-Private Service </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_student"> Student </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_members"> Owners, partners and directors of CII, FICCI & ASSOCHAM member companies </div>
+                            <div class=""grid-item> <input type="radio" name="section2.11" value="2.11_others"> Others </div>
+                        <br><br>
+                    </div>
+
+                    <b>2.12 If employed in Government/Statutory Body/ PSU, specify organization name</b> &nbsp;
+                        <input type="text" class="form-control item" id="emp_govt_org" placeholder="Enter organization name">
+                    
+                    <b>2.13 Is either of your parent (in case of minor)/spouse, a government servent?</b> &nbsp;
+                        <input type="text" class="form-control item" id="emp_govt_servant" placeholder="Enter details">
+
+                    <div class="grid-container">
+                        <b>2.14 Education qualification</b> &nbsp;
+                        <div class="grid-item"><input type="radio" name="section2.14" value="2.14_7pass"> 7th pass or less </div>
+                        <div class="grid-item"><input type="radio" name="section2.14" value="2.14_8-9"> Between 8th and 9th standard </div>
+                        <div class="grid-item"><input type="radio" name="section2.14" value="2.14_10pass"> 10th pass and above </div>
+                        <div class="grid-item"><input type="radio" name="section2.14" value="2.14_Graduate"> Graduate and above </div>
+                    <br>
+                    </div>
+
+                    <b>2.15 Are you eligible for Non-ECR category?</b> &nbsp;
+                        <input type="radio" name="section2.15" value="2.15_yes"> Yes
+                        <input type="radio" name="section2.15" value="2.15_no"> No <br><br>
+
+                    <b>2.16 Visible Distinguishing Mark</b> &nbsp;
+                        <input type="text" class="form-control item" id="identification_mark" placeholder="Enter mark details">
+
+                    <b>2.17 Aadhar Number</b> &nbsp;
+                        <input type="text" class="form-control item" id="aadhar_number" placeholder="Enter aadhar number"> <br>
+
+
+                <!--    Module 3. Family details        -->
+                <label id="module3"><h4>3. Family details</h4></label><br>
+                    <b>3.1 Father's given name</b> &nbsp;
+                        <input type="text" class="form-control item" id="father_given_name" placeholder="Enter father's givenname (First name and Middle name)">
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surname</b>
+                        <input type="text" class="form-control item" id="father_surname" placeholder="Enter father's surname (Last name)">
+                    <b>3.2 Mother's given name</b> &nbsp;
+                        <input type="text" class="form-control item" id="mother_given_name" placeholder="Enter mother's givenname (First name and Middle name)">
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surname</b>
+                        <input type="text" class="form-control item" id="mother_surname" placeholder="Enter mother's surname (Last name)">
+                    <b>3.3 Legal guardian's given name (If applicable)</b> &nbsp;
+                        <input type="text" class="form-control item" id="guardian_given_name" placeholder="Enter guardian's givenname (First name and Middle name)">
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surname</b>
+                        <input type="text" class="form-control item" id="guardian_surname" placeholder="Enter guardian's surname (Last name)">
+                    <b>3.4 Spouse's given name (If applicable)</b> &nbsp;
+                        <input type="text" class="form-control item" id="spouse_given_name" placeholder="Enter spouse's givenname (First name and Middle name)">
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Surname</b>
+                        <input type="text" class="form-control item" id="spouse_surname" placeholder="Enter spouse's surname (Last name)">
+                    
+                    <b>3.5 If applicant is a minor, provide following detials</b><br>
+                    <b>Parent's passport details</b><br><br>
+                    <b>Father/legal guardian's file/passport number</b> &nbsp;
+                        <input type="text" class="form-control item" id="father_passport_number" placeholder="Enter father's/legal guardian's file/passport number">
+                    <b>Father/Legal guardian's nationality, if not indian</b> &nbsp;
+                        <input type="text" class="form-control item" id="father_nationality" placeholder="Enter father/legal guardian's nationality">
+                    <b>Mother/Legal guardian's passport details</b> &nbsp;
+                        <input type="text" class="form-control item" id="mother_passport_number" placeholder="Enter mother/legal guardian's passport details">
+                    <b>Mother/legal guardian's nationality, if not indian</b> &nbsp;
+                        <input type="text" class="form-control item" id="mother_nationality" placeholder="Enter mother/legal guardian's nationality">
+
+
+                <!--    Module 4: Present residential address       -->
+                <label id="module4"><h4>4. Present residential address (Where applicant presently resides)</h4></label><br>
+                    <b>4.1 House number</b> &nbsp;
+                        <input type="text" class="form-control item" id="4.1house_number" placeholder="Enter house number">
+                    <div class="grid-container">
+                        <div class="grid-item">Village, Town or City: <input type="text" class="form-control item" placeholder="Village, town or city"></div>
+                        <div class="grid-item">District: <input type="text" class="form-control item" placeholder="District"></div>
+                        <div class="grid-item">State: <input type="text" class="form-control item" placeholder="State"></div>
+                        <div class="grid-item">Pincode: <input type="text" class="form-control item" placeholder="Village, town or city"></div>
+                    </div>
+                    <b>4.2 Is permanent address same as present address</b> &nbsp;
+                        <input type="radio" name="4.2_address" value="yes"> Yes &nbsp;
+                        <input type="radio" name="4.2_address" value="no"> No
+                    <br><br><br>
+                    
+
+                <!--    Module 5: Emergency contact details     -->                    
+                <label id="module5"><h4>5. Emergency contact details </h4></label><br>
+                    <b>Name</b> &nbsp;
+                        <input type="text" class="form-control item" id="5_name" placeholder="Enter emergency contact's name">
+                    <b>Address</b> &nbsp;
+                        <input type="text" class="form-control item" id="5_address" placeholder="Enter emergency contact's address">
+                    <b>Mobile number</b> &nbsp;
+                        <input type="text" class="form-control item" id="5_number" placeholder="Enter emergency contact's mobile number">
+                    <b>Email</b> &nbsp;
+                        <input type="text" class="form-control item" id="5_email" placeholder="Enter emergency contact's email">
+                    <br>
+
+                
+                <!--    Module 6: Previous passport application details     -->
+                <label id="module6"><h4>6. Previous passport application details</h4></label><br>
+                    <b>6.1 Details of last held passport</b><br>
+                        <b>Passport number</b> &nbsp;
+                            <input type="text" class="form-control item" id="6.1_pass_detail" placeholder="Enter previous passport number">
+                        <b>Date of issue</b> &nbsp;
+                            <input type="date" class="form-control item" id="6.1_doi">
+                        <b>Place of issue</b>
+                            <input type="text" class="form-control item" id="6.1_poi" placeholder="Enter the place of issue of previous passport">
+                        <br>
+                        
+                <label id="module7"><h4>7. Other details</h4></label><br>
+                    <b>7.1 Provide the following details if there are any criminal proceedings pending against the criminal</b> <br>
+                        7.1.1 Are any proceedings in respect of an offence alleged to have been committed by you pending before a criminal court in India? &nbsp;
+                            <input type="radio" name="7.1.1" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.1.1" value="no"><b>No</b>
+                            <br><br>
+                        7.1.2 Has any warrant or summons for your appearance been issued & pending before a court under any law for the time being in force? &nbsp;
+                            <input type="radio" name="7.1.2" value="yes"><b>Yes</b>   &nbsp;
+                            <input type="radio" name="7.1.2" value="no"><b>No</b>
+                            <br><br>
+                        7.1.3 Has a warrant for your arrest been issued by a court under any law for the time being in force? &nbsp;
+                            <input type="radio" name="7.1.3" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.1.3" value="no"><b>No</b>
+                            <br><br>
+                        7.1.4 Has an order prohibiting your departure from India been made by any court? &nbsp;
+                            <input type="radio" name="7.1.4" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.1.4" value="no"><b>No</b>
+                            <br><br>
+                    
+                    <b>7.2 Provide the following details if the applicant has been convicted by a court in India.</b> <br>
+                        7.2.1 Have you, at any time during the period of five years immediately preceding the date of this application, been convicted by a court in India for any offence involving moral turpitude and sentenced in respect thereof to imprisonment for not less than two years? &nbsp;
+                            <input type="radio" name="7.2.1" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.2.1" value="no"><b>No</b>
+                            <br><br>
+                    
+                    <b>7.3 Provide the following details if the applicant has been refused/denied passport.</b> <br>
+                        7.3.1 Have you ever been refused/denied passport? &nbsp; 
+                            <input type="radio" name="7.3.1" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.3.1" value="no"><b>No</b>
+                            <br><br>
+                        7.3.2 Has your passport ever been impounded? &nbsp;
+                            <input type="radio" name="7.3.2" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.3.2" value="no"><b>No</b>
+                            <br><br>
+                        7.3.3 Has your passport ever been revoked? &nbsp;
+                            <input type="radio" name="7.3.3" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.3.3" value="no"><b>No</b>
+                            <br><br>
+                    
+                    <b>7.4 Provide the following details if applicant has applied for or been granted foreign citizenship.</b> <br>
+                        7.4.1 Have you ever been granted citizenship by any other region/country? &nbsp;
+                            <input type="radio" name="7.4.1" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.4.1" value="no"><b>No</b>
+                            <br><br>
+                        7.4.2 Have you ever held the passport of any other region/country at any time? &nbsp;
+                            <input type="radio" name="7.4.2" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.4.2" value="no"><b>No</b>
+                            <br><br>
+                        7.4.3 Have you ever surrendered your Indian passport?
+                            <input type="radio" name="7.4.3" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.4.3" value="no"><b>No</b>
+                            <br><br>
+                        7.4.4 Have you ever applied for renunciation of Indian citizenship? &nbsp;
+                            <input type="radio" name="7.4.4" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.4.4" value="no"><b>No</b>
+                            <br><br>
+
+                    <b>7.5 Provide the following details if applicant has returned to India on Emergency Certificate.</b> <br>
+                        7.5.1 Have you ever returned to India on Emergency Certificate (EC)? &nbsp;
+                            <input type="radio" name="7.5.1" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.5.1" value="no"><b>No</b>
+                            <br><br>
+                        7.5.2 Have you ever been deported from any country? &nbsp;
+                            <input type="radio" name="7.5.2" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.5.2" value="no"><b>No</b>
+                            <br><br>
+                        7.5.3 Have you ever been repatriated from any country back to India? &nbsp;
+                            <input type="radio" name="7.5.2" value="yes"><b>Yes</b>    &nbsp;
+                            <input type="radio" name="7.5.2" value="no"><b>No</b>
+                            <br><br>
+                    <br>
+
+                <label id="module8"><h4>8. Fee details (Not to be filled by applicants submitting the application at Passport Seva Kendra)</h4></label><br>
+                    <b>8.1 Fee amount</b>
+                        <input type="number" class="form-control item" id="8.1_fee_amount" placeholder="Enter amount payable">
+                    <b>8.2 If paid by Demand Draft (DD), provide the following details</b> <br>
+                        DD Number
+                            <input type="text" class="form-control item" id="8.2_ddnum" placeholder="Enter DD number">
+                        DD issue date
+                            <input type="date" class="form-control item" id="8.2_dd_issuedate">
+                        DD expiry date
+                            <input type="date" class="form-control item" id="8.2_dd_expirydate">
+                        Bank name
+                            <input type="text" class="form-control item" id="8.2_bankname" placeholder="Enter bank name">
+
+            <div class="button">
+                <button type="button" class="btn btn-block create-account" style="width: 100%" onclick="validate()">Create Account</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
